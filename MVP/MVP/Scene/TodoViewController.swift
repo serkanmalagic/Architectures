@@ -13,7 +13,8 @@ class TodoViewController: UIViewController {
     lazy var todoPresenter = TodoPresenter(with: self)
     var todos = [Todo]()
     
-    @IBOutlet weak var changeTextLabel: UILabel!
+    let refreshControl = UIRefreshControl()
+
     
     @objc lazy var tapMeButton : UIButton = {
         let button = UIButton()
@@ -41,6 +42,7 @@ class TodoViewController: UIViewController {
         tableView.backgroundColor = .orange
         tableView.layer.cornerRadius = 15
         tableView.layer.borderWidth = 0.5
+        tableView.showsVerticalScrollIndicator = false
         return tableView
     }()
     
@@ -56,12 +58,24 @@ class TodoViewController: UIViewController {
     func setUI(){
         
         view.addSubview(tableView)
+        
+        refreshControl.attributedTitle = NSAttributedString(string: "Pull to refresh")
+        refreshControl.addTarget(self, action: #selector(self.refresh(_:)), for: .valueChanged)
+        tableView.addSubview(refreshControl)
 
         tableView.snp.makeConstraints { (make) -> Void in
-            make.left.right.bottom.equalTo(view)
-            make.top.equalTo(view)
+            make.top.equalToSuperview().offset(44)
+            make.leading.equalToSuperview().offset(16)
+            make.trailing.equalToSuperview().offset(-16)
+            make.bottom.equalToSuperview().offset(-32)
+
         }
         
+    }
+    
+    @objc func refresh(_ sender: AnyObject) {
+        todoPresenter.callTodos(vc : self)
+        refreshControl.endRefreshing()
     }
     
 }

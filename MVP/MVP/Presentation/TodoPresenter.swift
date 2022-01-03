@@ -26,6 +26,8 @@ class TodoPresenter {
         
     func callTodos(vc : UIViewController) {
         
+        todos.removeAll()
+        
         NetworkClient.performRequest(vc : vc, object: [Todo].self, router: APIRouter.getTodos) { response in
             
             self.view?.callTodos(model : response)
