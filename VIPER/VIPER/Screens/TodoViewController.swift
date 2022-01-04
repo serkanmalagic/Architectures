@@ -51,7 +51,7 @@ class TodoViewController: UIViewController {
             make.top.equalToSuperview().offset(44)
             make.leading.equalToSuperview().offset(16)
             make.trailing.equalToSuperview().offset(-16)
-            make.bottom.equalToSuperview().offset(-32)
+            make.bottom.equalToSuperview().offset(-16)
         }
         
         presenter?.updateView()
