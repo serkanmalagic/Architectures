@@ -140,6 +140,14 @@
 		FD73142127836AFA00BCA3B5 /* Screens */ = {
 			isa = PBXGroup;
 			children = (
+				FDCF6FC92784612C00E226A5 /* Todo */,
+			);
+			path = Screens;
+			sourceTree = "<group>";
+		};
+		FDCF6FC92784612C00E226A5 /* Todo */ = {
+			isa = PBXGroup;
+			children = (
 				FDE935F32783AE21008C58E2 /* TodoViewController.swift */,
 				FDE935F72783AE37008C58E2 /* TodoPresenter.swift */,
 				FDE935FF2783B160008C58E2 /* TodoEntitiy.swift */,
@@ -147,7 +155,7 @@
 				FD65D4B127842DDF0053A9FD /* TodoProtocols.swift */,
 				FDE935F52783AE2F008C58E2 /* TodoInteractor.swift */,
 			);
-			path = Screens;
+			path = Todo;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
