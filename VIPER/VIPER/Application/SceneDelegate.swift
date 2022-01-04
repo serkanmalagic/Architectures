@@ -22,8 +22,12 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
      //   window?.rootViewController = liveNews
       //  window?.makeKeyAndVisible()
         
+        
         let window = UIWindow(windowScene: windowScene)
-        window.rootViewController = liveNews
+        
+        let navViewController = UINavigationController(rootViewController: liveNews)
+        window.rootViewController = navViewController
+        
         self.window = window
         window.makeKeyAndVisible()
         

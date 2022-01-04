@@ -14,7 +14,14 @@ class TodoRouter: TodoPresenterToRouterProtocol{
     
     class func createModule() -> UIViewController {
         
-        let view = TodoViewController()
+        let view : TodoViewController = {
+            
+            let view = TodoViewController()
+            view.navigationItem.title = "VIPER Architecture"
+            return view
+            
+        }()
+        
         let presenter: TodoToPresenterProtocol & TodoInteractorToPresenterProtocol = TodoPresenter()
         let interactor: TodoPresentorToInteractorProtocol = TodoInteractor()
         let router: TodoPresenterToRouterProtocol = TodoRouter()

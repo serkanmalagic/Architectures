@@ -48,10 +48,10 @@ class TodoViewController: UIViewController {
         tableView.addSubview(refreshControl)
 
         tableView.snp.makeConstraints { (make) -> Void in
-            make.top.equalToSuperview().offset(44)
+            make.top.equalTo(view.safeAreaLayoutGuide).multipliedBy(1.20)
             make.leading.equalToSuperview().offset(16)
             make.trailing.equalToSuperview().offset(-16)
-            make.bottom.equalToSuperview().offset(-16)
+            make.bottom.equalToSuperview().offset(-32)
         }
         
         presenter?.updateView()
