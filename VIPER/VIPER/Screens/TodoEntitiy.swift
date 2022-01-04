@@ -1,8 +1,8 @@
 //
-//  TodoModel.swift
-//  MVVM-Example
+//  TodoEntitiy.swift
+//  VIPER
 //
-//  Created by Serkan Mehmet Malagiç on 6.11.2021.
+//  Created by Serkan Mehmet Malagiç on 4.01.2022.
 //
 
 import Foundation
@@ -17,4 +17,3 @@ struct Todo: Codable {
         case id, title, completed
     }
 }
-

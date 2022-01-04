@@ -16,23 +16,15 @@ struct NetworkClient {
     
     // object parameter is added here so the T generic param can infer the type
     // All objects must conform to "Decodable" protocol
-    static func performRequest<T>(vc : UIViewController ,object: T.Type, router: APIRouter, success: @escaping onSuccess<T>, failure: @escaping onFailure) where T: Decodable{
-        
-        let activityView = vc.view.createSpinner()
-        vc.view.isUserInteractionEnabled = false
-        activityView.startAnimating()
-        
+    static func performRequest<T>(object: T.Type, router: APIRouter, success: @escaping onSuccess<T>, failure: @escaping onFailure) where T: Decodable{
+       
         AF.request(router)
             .responseJSON { (response) in
-                vc.view.isUserInteractionEnabled = true
-                activityView.stopAnimating()
                 do {
                     let data = try JSONDecoder().decode(T.self, from: response.data!)
                     success(data)
                 } catch let error{
-                    let alert = UIAlertController(title: error.localizedDescription, message: "", preferredStyle: UIAlertController.Style.alert)
-                    alert.addAction(UIAlertAction(title: "Tamam", style: UIAlertAction.Style.default, handler: nil))
-                    vc.present(alert, animated: true, completion: nil)
+                    failure(error)
                 }
             }
     }

@@ -1,37 +1,22 @@
 //
-//  ViewController.swift
-//  MVP
+//  TodoViewController.swift
+//  VIPER
 //
-//  Created by Serkan Mehmet Malagiç on 3.01.2022.
+//  Created by Serkan Mehmet Malagiç on 4.01.2022.
 //
 
 import UIKit
 import SnapKit
+import SwiftyJSON
+
+
 
 class TodoViewController: UIViewController {
-    
-    lazy var todoPresenter = TodoPresenter(with: self)
-    var todos = [Todo]()
+        
+    // MARK: - Properties
+    var presenter: TodoToPresenterProtocol?
     
     let refreshControl = UIRefreshControl()
-
-    @objc lazy var tapMeButton : UIButton = {
-        let button = UIButton()
-        button.setTitle("Tap me and update MVP", for: .normal)
-        button.backgroundColor = .systemOrange
-        button.layer.cornerRadius = 7
-        return button
-    }()
-    
-    lazy var lbl : UILabel = {
-       let label = UILabel()
-        label.textColor = .black
-        label.backgroundColor = .orange
-        label.font = UIFont(name: "Helvetica", size: 25)
-        label.text = "Lorem ipsum"
-        label.numberOfLines = 0
-        return label
-    }()
     
     lazy var tableView : UITableView = {
        let tableView = UITableView()
@@ -50,11 +35,11 @@ class TodoViewController: UIViewController {
         
         setUI()
         
-        todoPresenter.callTodos(vc : self)
-
     }
     
     func setUI(){
+        
+        view.backgroundColor = .systemOrange
         
         view.addSubview(tableView)
         
@@ -69,24 +54,15 @@ class TodoViewController: UIViewController {
             make.bottom.equalToSuperview().offset(-32)
         }
         
+        presenter?.updateView()
+        
     }
     
     @objc func refresh(_ sender: AnyObject) {
-        todoPresenter.callTodos(vc : self)
+        presenter?.updateView()
         refreshControl.endRefreshing()
     }
-    
-}
-
-extension TodoViewController: TodoPresenterView {
-    
-    //  Update UI as requested
-    func callTodos( model : [Todo]? ) {
-        self.todos = model!
-        tableView.reloadData()
-        print("tapped")
-    }
-    
+   
 }
 
 extension TodoViewController : UITableViewDataSource, UITableViewDelegate {
@@ -94,17 +70,33 @@ extension TodoViewController : UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell")!
-        
-        let item = todos[indexPath.row]
-        
-        cell.textLabel?.text = item.title
+                
+        let todos = presenter?.getTodos()
+
+        cell.textLabel?.text = todos?[indexPath.row].title
         cell.textLabel?.numberOfLines = 0
         
         return cell
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return todos.count
+        print("row count \(presenter?.getTodosCount())")
+        return presenter?.getTodosCount() ?? 0
     }
     
+}
+
+
+// MARK: - LiveNewsListPresenterToViewProtocol
+extension TodoViewController: TodoPresenterToViewProtocol {
+
+    func showTodos() {
+        tableView.reloadData()
+    }
+    
+    func showError() {
+        let alert = UIAlertController(title: "Alert", message: "Problem Fetching News", preferredStyle: UIAlertController.Style.alert)
+        alert.addAction(UIAlertAction(title: "Okay", style: UIAlertAction.Style.default, handler: nil))
+        self.present(alert, animated: true, completion: nil)
+    }
 }
