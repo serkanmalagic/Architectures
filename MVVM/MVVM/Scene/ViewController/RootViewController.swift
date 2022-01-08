@@ -20,21 +20,24 @@ class RootViewController: UITabBarController, UITabBarControllerDelegate {
         
         let vcFetch = TodoViewController()
         let icon1 = UITabBarItem(title: "Home", image: UIImage(named: "home"), selectedImage: UIImage(named: "otherImage.png"))
-        
         vcFetch.tabBarItem = icon1
         
         let vcAdd = TodoAddViewController()
-                let icon2 = UITabBarItem(title: "Add", image: UIImage(named: "add"), selectedImage: UIImage(named: "add"))
+        let icon2 = UITabBarItem(title: "Add", image: UIImage(named: "add"), selectedImage: UIImage(named: "add"))
         vcAdd.tabBarItem = icon2
         
         let vcDelete = TodoDeleteViewController()
-                let icon3 = UITabBarItem(title: "Delete", image: UIImage(named: "delete"), selectedImage: UIImage(named: "delete"))
+        let icon3 = UITabBarItem(title: "Delete", image: UIImage(named: "delete"), selectedImage: UIImage(named: "delete"))
         vcDelete.tabBarItem = icon3
+        
+        let tableViewAdvancedVc = TableViewAdvancedViewController()
+        let icon4 = UITabBarItem(title: "TableView", image: UIImage(named: "table"), selectedImage: UIImage(named: "table"))
+        tableViewAdvancedVc.tabBarItem = icon4
         
         
         
 
-        let controllers = [vcFetch, vcAdd, vcDelete]  //array of the root view controllers displayed by the tab bar interface
+        let controllers = [vcFetch, vcAdd, vcDelete, tableViewAdvancedVc]  //array of the root view controllers displayed by the tab bar interface
         self.viewControllers = controllers
     }
 

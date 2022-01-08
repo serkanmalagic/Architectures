@@ -24,6 +24,8 @@
 		FD4D28972783409300B66129 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD4D28962783409300B66129 /* SceneDelegate.swift */; };
 		FD4D289E2783409400B66129 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FD4D289D2783409400B66129 /* Assets.xcassets */; };
 		FD4D28A12783409400B66129 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FD4D289F2783409400B66129 /* LaunchScreen.storyboard */; };
+		FD5397E12789004900BEEDC1 /* TableViewAdvancedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD5397E02789004900BEEDC1 /* TableViewAdvancedViewController.swift */; };
+		FDAF16F02789DA7200239E2A /* TableViewAdvancedTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDAF16EF2789DA7200239E2A /* TableViewAdvancedTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -47,7 +49,9 @@
 		FD4D289D2783409400B66129 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FD4D28A02783409400B66129 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		FD4D28A22783409400B66129 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FD5397E02789004900BEEDC1 /* TableViewAdvancedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewAdvancedViewController.swift; sourceTree = "<group>"; };
 		FD85A681966DB17F0E3FB5D4 /* Pods-MVVM.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MVVM.release.xcconfig"; path = "Target Support Files/Pods-MVVM/Pods-MVVM.release.xcconfig"; sourceTree = "<group>"; };
+		FDAF16EF2789DA7200239E2A /* TableViewAdvancedTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewAdvancedTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,15 +102,16 @@
 			path = ViewModel;
 			sourceTree = "<group>";
 		};
-		FD25A0DB2784796200295DDC /* View */ = {
+		FD25A0DB2784796200295DDC /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
 				FD25A0E027847A3900295DDC /* TodoViewController.swift */,
+				FD5397E02789004900BEEDC1 /* TableViewAdvancedViewController.swift */,
 				FD25A0F1278484A800295DDC /* TodoAddViewController.swift */,
 				FD25A0F3278484B200295DDC /* TodoDeleteViewController.swift */,
 				FD25A0F52784856900295DDC /* RootViewController.swift */,
 			);
-			path = View;
+			path = ViewController;
 			sourceTree = "<group>";
 		};
 		FD25A0DC2784796900295DDC /* Model */ = {
@@ -158,15 +163,32 @@
 		FD4D28932783409300B66129 /* MVVM */ = {
 			isa = PBXGroup;
 			children = (
+				FDAF16ED2789DA3B00239E2A /* Scene */,
 				FD25A0EC27847AA500295DDC /* Network */,
 				FD25A0DD2784796D00295DDC /* Helper */,
 				FD25A0DC2784796900295DDC /* Model */,
-				FD25A0DB2784796200295DDC /* View */,
 				FD25A0DA2784795900295DDC /* ViewModel */,
 				FD25A0D92784792100295DDC /* Application */,
 				FD4D28A22783409400B66129 /* Info.plist */,
 			);
 			path = MVVM;
+			sourceTree = "<group>";
+		};
+		FDAF16ED2789DA3B00239E2A /* Scene */ = {
+			isa = PBXGroup;
+			children = (
+				FDAF16EE2789DA4A00239E2A /* UI */,
+				FD25A0DB2784796200295DDC /* ViewController */,
+			);
+			path = Scene;
+			sourceTree = "<group>";
+		};
+		FDAF16EE2789DA4A00239E2A /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				FDAF16EF2789DA7200239E2A /* TableViewAdvancedTableViewCell.swift */,
+			);
+			path = UI;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -291,10 +313,12 @@
 				FD25A0EB27847A8C00295DDC /* LoremSwiftum.swift in Sources */,
 				FD25A0F4278484B200295DDC /* TodoDeleteViewController.swift in Sources */,
 				FD25A0E927847A8C00295DDC /* Observable.swift in Sources */,
+				FD5397E12789004900BEEDC1 /* TableViewAdvancedViewController.swift in Sources */,
 				FD25A0E827847A8C00295DDC /* Extension.swift in Sources */,
 				FD4D28972783409300B66129 /* SceneDelegate.swift in Sources */,
 				FD25A0F62784856900295DDC /* RootViewController.swift in Sources */,
 				FD25A0EF27847AAF00295DDC /* ApiRouter.swift in Sources */,
+				FDAF16F02789DA7200239E2A /* TableViewAdvancedTableViewCell.swift in Sources */,
 				FD25A0E327847A4700295DDC /* Todo.swift in Sources */,
 				FD25A0EA27847A8C00295DDC /* Constants.swift in Sources */,
 			);
@@ -451,7 +475,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.serkanapp.MVVM;
+				PRODUCT_BUNDLE_IDENTIFIER = com.serkanapp.mmmm;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -480,7 +504,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.serkanapp.MVVM;
+				PRODUCT_BUNDLE_IDENTIFIER = com.serkanapp.mmmm;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
