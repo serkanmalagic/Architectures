@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		82BA2E8547C79669F595585B /* Pods_MVVM.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 40D2FF0EC7C1BD47FBE61991 /* Pods_MVVM.framework */; };
+		FD13A009278B169C00264698 /* RelatedProductTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD13A008278B169C00264698 /* RelatedProductTableViewCell.swift */; };
 		FD25A0DF27847A2D00295DDC /* TodoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD25A0DE27847A2D00295DDC /* TodoViewModel.swift */; };
 		FD25A0E127847A3900295DDC /* TodoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD25A0E027847A3900295DDC /* TodoViewController.swift */; };
 		FD25A0E327847A4700295DDC /* Todo.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD25A0E227847A4700295DDC /* Todo.swift */; };
@@ -25,12 +26,15 @@
 		FD4D289E2783409400B66129 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FD4D289D2783409400B66129 /* Assets.xcassets */; };
 		FD4D28A12783409400B66129 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FD4D289F2783409400B66129 /* LaunchScreen.storyboard */; };
 		FD5397E12789004900BEEDC1 /* TableViewAdvancedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD5397E02789004900BEEDC1 /* TableViewAdvancedViewController.swift */; };
-		FDAF16F02789DA7200239E2A /* TableViewAdvancedTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDAF16EF2789DA7200239E2A /* TableViewAdvancedTableViewCell.swift */; };
+		FD995199278A47540073752F /* PhotoCarosuelTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD995198278A47540073752F /* PhotoCarosuelTableViewCell.swift */; };
+		FD99519B278A6E280073752F /* PhotoCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD99519A278A6E280073752F /* PhotoCollectionViewCell.swift */; };
+		FD99519D278A76090073752F /* TableViewAdvancedViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD99519C278A76090073752F /* TableViewAdvancedViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		40D2FF0EC7C1BD47FBE61991 /* Pods_MVVM.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MVVM.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BE77E95D394EDB0438023805 /* Pods-MVVM.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MVVM.debug.xcconfig"; path = "Target Support Files/Pods-MVVM/Pods-MVVM.debug.xcconfig"; sourceTree = "<group>"; };
+		FD13A008278B169C00264698 /* RelatedProductTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RelatedProductTableViewCell.swift; sourceTree = "<group>"; };
 		FD25A0DE27847A2D00295DDC /* TodoViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoViewModel.swift; sourceTree = "<group>"; };
 		FD25A0E027847A3900295DDC /* TodoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoViewController.swift; sourceTree = "<group>"; };
 		FD25A0E227847A4700295DDC /* Todo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Todo.swift; sourceTree = "<group>"; };
@@ -51,7 +55,9 @@
 		FD4D28A22783409400B66129 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FD5397E02789004900BEEDC1 /* TableViewAdvancedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewAdvancedViewController.swift; sourceTree = "<group>"; };
 		FD85A681966DB17F0E3FB5D4 /* Pods-MVVM.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MVVM.release.xcconfig"; path = "Target Support Files/Pods-MVVM/Pods-MVVM.release.xcconfig"; sourceTree = "<group>"; };
-		FDAF16EF2789DA7200239E2A /* TableViewAdvancedTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewAdvancedTableViewCell.swift; sourceTree = "<group>"; };
+		FD995198278A47540073752F /* PhotoCarosuelTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoCarosuelTableViewCell.swift; sourceTree = "<group>"; };
+		FD99519A278A6E280073752F /* PhotoCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoCollectionViewCell.swift; sourceTree = "<group>"; };
+		FD99519C278A76090073752F /* TableViewAdvancedViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewAdvancedViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,6 +104,7 @@
 			isa = PBXGroup;
 			children = (
 				FD25A0DE27847A2D00295DDC /* TodoViewModel.swift */,
+				FD99519C278A76090073752F /* TableViewAdvancedViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -186,7 +193,9 @@
 		FDAF16EE2789DA4A00239E2A /* UI */ = {
 			isa = PBXGroup;
 			children = (
-				FDAF16EF2789DA7200239E2A /* TableViewAdvancedTableViewCell.swift */,
+				FD995198278A47540073752F /* PhotoCarosuelTableViewCell.swift */,
+				FD99519A278A6E280073752F /* PhotoCollectionViewCell.swift */,
+				FD13A008278B169C00264698 /* RelatedProductTableViewCell.swift */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -309,17 +318,20 @@
 				FD25A0E127847A3900295DDC /* TodoViewController.swift in Sources */,
 				FD25A0DF27847A2D00295DDC /* TodoViewModel.swift in Sources */,
 				FD4D28952783409300B66129 /* AppDelegate.swift in Sources */,
+				FD99519B278A6E280073752F /* PhotoCollectionViewCell.swift in Sources */,
 				FD25A0F027847AAF00295DDC /* NetworkClient.swift in Sources */,
 				FD25A0EB27847A8C00295DDC /* LoremSwiftum.swift in Sources */,
+				FD13A009278B169C00264698 /* RelatedProductTableViewCell.swift in Sources */,
 				FD25A0F4278484B200295DDC /* TodoDeleteViewController.swift in Sources */,
 				FD25A0E927847A8C00295DDC /* Observable.swift in Sources */,
 				FD5397E12789004900BEEDC1 /* TableViewAdvancedViewController.swift in Sources */,
 				FD25A0E827847A8C00295DDC /* Extension.swift in Sources */,
 				FD4D28972783409300B66129 /* SceneDelegate.swift in Sources */,
 				FD25A0F62784856900295DDC /* RootViewController.swift in Sources */,
+				FD995199278A47540073752F /* PhotoCarosuelTableViewCell.swift in Sources */,
 				FD25A0EF27847AAF00295DDC /* ApiRouter.swift in Sources */,
-				FDAF16F02789DA7200239E2A /* TableViewAdvancedTableViewCell.swift in Sources */,
 				FD25A0E327847A4700295DDC /* Todo.swift in Sources */,
+				FD99519D278A76090073752F /* TableViewAdvancedViewModel.swift in Sources */,
 				FD25A0EA27847A8C00295DDC /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
