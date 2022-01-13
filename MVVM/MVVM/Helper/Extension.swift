@@ -103,3 +103,17 @@ extension UITextField {
         self.rightViewMode = .always
     }
 }
+
+func actualNumberOfLines(label: UILabel) -> Int {
+    
+    // You have to call layoutIfNeeded() if you are using autoLayout
+    label.layoutIfNeeded()
+    
+    let myText = label.text! as NSString
+    
+    let rect = CGSize(width: label.bounds.width, height: CGFloat.greatestFiniteMagnitude)
+    let labelSize = myText.boundingRect(with: rect, options: .usesLineFragmentOrigin, attributes: [NSAttributedString.Key.font: label.font as Any], context: nil)
+    
+    return Int(ceil(CGFloat(labelSize.height) / label.font.lineHeight))
+    
+}

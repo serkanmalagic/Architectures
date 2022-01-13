@@ -72,8 +72,6 @@ class TableViewAdvancedViewController: UIViewController {
             
         sections.append(.productInfo(viewModel: tableViewAdvanvedViewModel))
        
-        
-        
         sections.append(.relatedProducts)
 
     }

@@ -21,10 +21,12 @@
 		FD25A0F2278484A800295DDC /* TodoAddViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD25A0F1278484A800295DDC /* TodoAddViewController.swift */; };
 		FD25A0F4278484B200295DDC /* TodoDeleteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD25A0F3278484B200295DDC /* TodoDeleteViewController.swift */; };
 		FD25A0F62784856900295DDC /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD25A0F52784856900295DDC /* RootViewController.swift */; };
+		FD49D3AE2790868B00636992 /* TableViewAdvanced2TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD49D3AD2790868B00636992 /* TableViewAdvanced2TableViewCell.swift */; };
 		FD4D28952783409300B66129 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD4D28942783409300B66129 /* AppDelegate.swift */; };
 		FD4D28972783409300B66129 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD4D28962783409300B66129 /* SceneDelegate.swift */; };
 		FD4D289E2783409400B66129 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FD4D289D2783409400B66129 /* Assets.xcassets */; };
 		FD4D28A12783409400B66129 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FD4D289F2783409400B66129 /* LaunchScreen.storyboard */; };
+		FD4DF1AD278C8991004F9470 /* TableViewAdvanced2ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD4DF1AC278C8991004F9470 /* TableViewAdvanced2ViewController.swift */; };
 		FD5397E12789004900BEEDC1 /* TableViewAdvancedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD5397E02789004900BEEDC1 /* TableViewAdvancedViewController.swift */; };
 		FD995199278A47540073752F /* PhotoCarosuelTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD995198278A47540073752F /* PhotoCarosuelTableViewCell.swift */; };
 		FD99519B278A6E280073752F /* PhotoCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD99519A278A6E280073752F /* PhotoCollectionViewCell.swift */; };
@@ -47,12 +49,14 @@
 		FD25A0F1278484A800295DDC /* TodoAddViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoAddViewController.swift; sourceTree = "<group>"; };
 		FD25A0F3278484B200295DDC /* TodoDeleteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoDeleteViewController.swift; sourceTree = "<group>"; };
 		FD25A0F52784856900295DDC /* RootViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootViewController.swift; sourceTree = "<group>"; };
+		FD49D3AD2790868B00636992 /* TableViewAdvanced2TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewAdvanced2TableViewCell.swift; sourceTree = "<group>"; };
 		FD4D28912783409300B66129 /* MVVM.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MVVM.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FD4D28942783409300B66129 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FD4D28962783409300B66129 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		FD4D289D2783409400B66129 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FD4D28A02783409400B66129 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		FD4D28A22783409400B66129 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FD4DF1AC278C8991004F9470 /* TableViewAdvanced2ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewAdvanced2ViewController.swift; sourceTree = "<group>"; };
 		FD5397E02789004900BEEDC1 /* TableViewAdvancedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewAdvancedViewController.swift; sourceTree = "<group>"; };
 		FD85A681966DB17F0E3FB5D4 /* Pods-MVVM.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MVVM.release.xcconfig"; path = "Target Support Files/Pods-MVVM/Pods-MVVM.release.xcconfig"; sourceTree = "<group>"; };
 		FD995198278A47540073752F /* PhotoCarosuelTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoCarosuelTableViewCell.swift; sourceTree = "<group>"; };
@@ -117,6 +121,7 @@
 				FD25A0F1278484A800295DDC /* TodoAddViewController.swift */,
 				FD25A0F3278484B200295DDC /* TodoDeleteViewController.swift */,
 				FD25A0F52784856900295DDC /* RootViewController.swift */,
+				FD4DF1AC278C8991004F9470 /* TableViewAdvanced2ViewController.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -196,6 +201,7 @@
 				FD995198278A47540073752F /* PhotoCarosuelTableViewCell.swift */,
 				FD99519A278A6E280073752F /* PhotoCollectionViewCell.swift */,
 				FD13A008278B169C00264698 /* RelatedProductTableViewCell.swift */,
+				FD49D3AD2790868B00636992 /* TableViewAdvanced2TableViewCell.swift */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -323,6 +329,7 @@
 				FD25A0EB27847A8C00295DDC /* LoremSwiftum.swift in Sources */,
 				FD13A009278B169C00264698 /* RelatedProductTableViewCell.swift in Sources */,
 				FD25A0F4278484B200295DDC /* TodoDeleteViewController.swift in Sources */,
+				FD49D3AE2790868B00636992 /* TableViewAdvanced2TableViewCell.swift in Sources */,
 				FD25A0E927847A8C00295DDC /* Observable.swift in Sources */,
 				FD5397E12789004900BEEDC1 /* TableViewAdvancedViewController.swift in Sources */,
 				FD25A0E827847A8C00295DDC /* Extension.swift in Sources */,
@@ -333,6 +340,7 @@
 				FD25A0E327847A4700295DDC /* Todo.swift in Sources */,
 				FD99519D278A76090073752F /* TableViewAdvancedViewModel.swift in Sources */,
 				FD25A0EA27847A8C00295DDC /* Constants.swift in Sources */,
+				FD4DF1AD278C8991004F9470 /* TableViewAdvanced2ViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -30,7 +30,7 @@ class RootViewController: UITabBarController, UITabBarControllerDelegate {
         let icon3 = UITabBarItem(title: "Delete", image: UIImage(named: "delete"), selectedImage: UIImage(named: "delete"))
         vcDelete.tabBarItem = icon3
         
-        let tableViewAdvancedVc = TableViewAdvancedViewController()
+        let tableViewAdvancedVc = TableViewAdvanced2ViewController()
         let icon4 = UITabBarItem(title: "TableView", image: UIImage(named: "table"), selectedImage: UIImage(named: "table"))
         tableViewAdvancedVc.tabBarItem = icon4
         
