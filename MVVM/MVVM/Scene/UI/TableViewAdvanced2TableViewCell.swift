@@ -12,8 +12,8 @@ import WebKit
 class TableViewAdvanced2TableViewCell: UITableViewCell {
     
     static let identifier = "TableViewAdvanced2TableViewCell"
-    
-    var delegate : TableViewAdvanced2ViewControllerWebViewDelegate?
+    var delegate : TableViewReloadDelegate?
+    var webViewIsUpdated : Bool = false
     
     lazy var label : UILabel = {
         let label = UILabel()
@@ -48,6 +48,10 @@ class TableViewAdvanced2TableViewCell: UITableViewCell {
         webView.scrollView.isScrollEnabled = false
         webView.navigationDelegate = self
         webView.isOpaque = false
+        webView.layer.borderWidth = 0.5
+        webView.layer.borderColor =  UIColor.darkGray.cgColor
+        webView.layer.cornerRadius = 10
+        webView.layer.masksToBounds = true
         return webView
     }()
     
@@ -106,16 +110,15 @@ class TableViewAdvanced2TableViewCell: UITableViewCell {
     }
     func configureWebViewCell () {
         
-        var request = URLRequest(url: URL(string: "https://www.google.com")!)
+        var request = URLRequest(url: URL(string: "https://getbootstrap.com/docs/4.0/examples/product/")!)
         request.cachePolicy = .returnCacheDataElseLoad
         webView.load(request)
         
         contentView.addSubview(webView)
        
-        
         webView.snp.makeConstraints { make in
-            make.leading.equalToSuperview().offset(8)
-            make.trailing.equalToSuperview().offset(-8)
+            make.leading.equalToSuperview().offset(2)
+            make.trailing.equalToSuperview().offset(-2)
             make.top.equalToSuperview().offset(8)
             make.bottom.equalToSuperview().offset(-8)
         }
@@ -129,20 +132,19 @@ extension TableViewAdvanced2TableViewCell: WKNavigationDelegate {
     
     func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
                 
-        DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
             
-            let height = self.webView.scrollView.contentSize.height
-            
-            self.delegate?.updateWebViewHeight(height: Float(height))
-
-            self.webView.snp.remakeConstraints { make in
-                make.leading.equalToSuperview().offset(8)
-                make.trailing.equalToSuperview().offset(-8)
-                make.top.equalToSuperview().offset(8)
-                make.bottom.equalToSuperview().offset(-8)
-                make.height.equalTo(height)
+            if !self.webViewIsUpdated {
+                
+                let height = self.webView.scrollView.contentSize.height
+                
+                self.webView.snp.remakeConstraints { make in
+                    make.height.equalTo(height)
+                }
+                
+                self.delegate?.updateWebViewHeight(height: height)
+                self.webViewIsUpdated = true
             }
-
         }
     }
 

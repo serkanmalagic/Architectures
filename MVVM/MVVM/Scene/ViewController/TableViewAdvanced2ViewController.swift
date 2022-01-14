@@ -8,17 +8,15 @@
 import UIKit
 import SnapKit
 
-protocol TableViewAdvanced2ViewControllerWebViewDelegate {
-    func updateWebViewHeight (height : Float )
+protocol TableViewReloadDelegate : class {
+    func updateWebViewHeight(height : CGFloat)
 }
 
-class TableViewAdvanced2ViewController: UIViewController, TableViewAdvanced2ViewControllerWebViewDelegate{
-    
-    
+class TableViewAdvanced2ViewController: UIViewController, TableViewReloadDelegate{
     
     private var todoViewModel = TodoViewModel()
-    private var webViewHeight : Float = 0.0
-    
+    private var webViewHeight : CGFloat = 0
+
     //  MARK: Views
     
     lazy var tableView : UITableView = {
@@ -48,19 +46,17 @@ class TableViewAdvanced2ViewController: UIViewController, TableViewAdvanced2View
         
         tableView.snp.remakeConstraints { make in
             make.top.equalTo(view.safeAreaLayoutGuide).dividedBy(1.01)
-            make.leading.equalToSuperview().offset(16)
-            make.trailing.equalToSuperview().offset(-16)
+            make.leading.equalToSuperview()
+            make.trailing.equalToSuperview()
             make.bottom.equalTo(view.safeAreaLayoutGuide).dividedBy(1.01)
 
         }
         
     }
     
-    func updateWebViewHeight(height: Float) {
-        webViewHeight = height
-        tableView.beginUpdates()
-        tableView.reloadRows(at: [IndexPath(row: 0, section: 0)], with: .automatic)
-        tableView.endUpdates()
+    func updateWebViewHeight(height : CGFloat) {
+            webViewHeight = height
+            tableView.reloadData()
     }
 
 }
@@ -81,9 +77,10 @@ extension TableViewAdvanced2ViewController: UITableViewDataSource,
 
         switch indexPath.row {
         case 0:
-            cell.configureCellHeaderLabel()
-        case  1:
             cell.configureWebViewCell()
+            cell.delegate = self
+        case  1:
+            cell.configureCellHeaderLabel()
         case 5, 6, 7:
             cell.configureCellImgView()
         default:
@@ -98,9 +95,12 @@ extension TableViewAdvanced2ViewController: UITableViewDataSource,
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        
+        switch indexPath.row {
+        case 0:
+            return webViewHeight
+        default:
             return UITableView.automaticDimension
-        
+        }
     }
     
 }
