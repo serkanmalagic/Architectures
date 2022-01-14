@@ -14,7 +14,7 @@ class TableViewAdvanced2TableViewCell: UITableViewCell {
     static let identifier = "TableViewAdvanced2TableViewCell"
     var delegate : TableViewReloadDelegate?
     var webViewIsUpdated : Bool = false
-    
+   
     lazy var label : UILabel = {
         let label = UILabel()
         label.numberOfLines = 0
@@ -144,6 +144,7 @@ extension TableViewAdvanced2TableViewCell: WKNavigationDelegate {
                 
                 self.delegate?.updateWebViewHeight(height: height)
                 self.webViewIsUpdated = true
+                
             }
         }
     }
