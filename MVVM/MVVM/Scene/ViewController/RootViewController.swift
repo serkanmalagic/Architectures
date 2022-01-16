@@ -26,8 +26,8 @@ class RootViewController: UITabBarController, UITabBarControllerDelegate {
         let icon2 = UITabBarItem(title: "Add", image: UIImage(named: "add"), selectedImage: UIImage(named: "add"))
         vcAdd.tabBarItem = icon2
         
-        let vcDelete = TodoDeleteViewController()
-        let icon3 = UITabBarItem(title: "Delete", image: UIImage(named: "delete"), selectedImage: UIImage(named: "delete"))
+        let vcDelete = Collection2RowsViewController()
+        let icon3 = UITabBarItem(title: "Coll2Row", image: UIImage(named: "delete"), selectedImage: UIImage(named: "delete"))
         vcDelete.tabBarItem = icon3
         
         let tableViewAdvancedVc = TableViewAdvanced2ViewController()

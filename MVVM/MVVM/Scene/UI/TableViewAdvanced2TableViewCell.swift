@@ -110,7 +110,7 @@ class TableViewAdvanced2TableViewCell: UITableViewCell {
     }
     func configureWebViewCell () {
         
-        var request = URLRequest(url: URL(string: "https://getbootstrap.com/docs/4.0/examples/product/")!)
+        var request = URLRequest(url: URL(string: "https://image.shutterstock.com/image-photo/image-260nw-1289685550.jpg")!)
         request.cachePolicy = .returnCacheDataElseLoad
         webView.load(request)
         
